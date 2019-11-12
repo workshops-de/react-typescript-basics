@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import BookListItem from '../BookListItem/BookListItem';
 
 interface Book {
@@ -7,11 +7,17 @@ interface Book {
 
 export const BookList: React.FC = () => {
 
-    const books: Array<Book> = [
-        { title: 'A first Book' },
-        { title: 'Another awesome Book' },
-        { title: 'Learn React - the full book' }
-    ]
+    const [books, setBooks] = useState<Array<Book>>([]);
+
+    useEffect(() => {
+        fetchData()
+    }, []);
+
+    const fetchData = async () => {
+        const response = await fetch('http://localhost:4730/books')
+        const result = await response.json();
+        setBooks(result);
+    }
 
     return (
         <Fragment>
