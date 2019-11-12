@@ -9,6 +9,7 @@ const App: React.FC = () => {
     <Fragment>
       <SimpleName />
       <Counter />
+      <Counter initialValue={50} />
     </Fragment>
   );
 }

@@ -1,8 +1,11 @@
 import React, { useState, Fragment } from 'react';
 
+interface CounterProbs {
+    initialValue?: number;
+}
 
-const Counter: React.FC = () => {
-    const [count, setCount] = useState<number>(0);
+const Counter: React.FC<CounterProbs> = ({ initialValue = 100 }) => {
+    const [count, setCount] = useState<number>(initialValue);
 
     const incrementCount = () => {
         setCount((prevCounter) => prevCounter + 1);
