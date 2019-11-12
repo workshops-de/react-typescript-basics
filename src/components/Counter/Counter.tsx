@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 
 
 const Counter: React.FC = () => {
@@ -8,8 +8,16 @@ const Counter: React.FC = () => {
         setCount((prevCounter) => prevCounter + 1);
     }
 
+    const decrementCount = () => {
+        setCount((prevCounter) => prevCounter - 1);
+    }
+
     return (
-        <button onClick={incrementCount} > {count}</button >
+        <Fragment>
+            <button onClick={incrementCount} >+1</button >
+            {count}
+            <button onClick={decrementCount} >-1</button >
+        </Fragment>
     );
 }
 
