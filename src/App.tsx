@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import './App.css';
 
-import BookList from './components/BookList/BookList';
+import BookFormBuildInValidation from './components/BookFormBuildInValidation/BookFormBuildInValidation';
 
 const App: React.FC = () => {
   return (
     <Fragment>
-      <BookList />
+      <BookFormBuildInValidation title={'Create a new Book'} />
     </Fragment>
   );
 }
