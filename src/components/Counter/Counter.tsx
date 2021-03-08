@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-type CounterProps = {
-    count: number;
-    incrementCount: () => void;
-    decrementCount: () => void;
-}
+import CounterContext from "../../counterContext";
 
-const Counter: React.FC<CounterProps> = ({ count, incrementCount, decrementCount }) => {
+const Counter: React.FC = () => {
+    const { count, incrementCount, decrementCount } = useContext(CounterContext);
+
     return (
         <>
             <button onClick={incrementCount} >+1</button >

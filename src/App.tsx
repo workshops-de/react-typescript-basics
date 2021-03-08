@@ -2,31 +2,30 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Counter from "./components/Counter/Counter";
+import CounterContext from "./counterContext";
 
 const initialValue = 100;
 
 const App: React.FC = () => {
   const [count, setCount] = useState<number>(initialValue);
 
-  const incrementCount = () => {
-    setCount((prevCounter) => prevCounter + 1);
-  };
-
-  const decrementCount = () => {
-    setCount((prevCounter) => prevCounter - 1);
+  const counter = {
+    count: count,
+    incrementCount: () => {
+      setCount((prevCounter) => prevCounter + 1);
+    },
+    decrementCount: () => {
+      setCount((prevCounter) => prevCounter - 1);
+    },
   };
 
   return (
-    <>
-      <Header count={count} />
+    <CounterContext.Provider value={counter}>
+      <Header />
       <div className={"App-container"}>
-        <Counter
-          count={count}
-          incrementCount={incrementCount}
-          decrementCount={decrementCount}
-        />
+        <Counter />
       </div>
-    </>
+    </CounterContext.Provider>
   );
 };
 

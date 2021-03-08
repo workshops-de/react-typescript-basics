@@ -1,21 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import "./Header.css";
 import Badge from "./Badge";
+import CounterContext from "../../counterContext";
 
 interface HeaderElementProps {
   text: string;
-  badgeValue?: number | string;
+  showBadge?: boolean;
 }
 
 const HeaderElement: React.FunctionComponent<HeaderElementProps> = ({
   text,
-  badgeValue,
-}) => (
-  <div className={"HeaderElement"}>
-    <span>{text}</span>
-    {badgeValue && <Badge value={badgeValue} />}
-  </div>
-);
+  showBadge,
+}) => {
+  const { count } = useContext(CounterContext);
+
+  return (
+    <div className={"HeaderElement"}>
+      <span>{text}</span>
+      {showBadge && <Badge value={count} />}
+    </div>
+  );
+};
 
 export default HeaderElement;

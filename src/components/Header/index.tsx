@@ -9,8 +9,8 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ count }) => (
   <div className={"Header"}>
-    <HeaderElement text={"Book"}></HeaderElement>
-    <HeaderElement text={"Counter"} badgeValue={count}></HeaderElement>
+    <HeaderElement text={"Book"} />
+    <HeaderElement text={"Counter"} showBadge />
   </div>
 );
 
