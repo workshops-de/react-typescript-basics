@@ -1,0 +1,28 @@
+.Header {
+  display: flex;
+  flex: 1;
+  padding: 20px 0;
+  background-color: #282c34;
+
+  /* child alignment */
+  flex-direction: row;
+  align-items: center;
+}
+
+.HeaderElement {
+  display: flex;
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+  background: lightgray;
+
+  /* child alignment */
+  align-items: center;
+}
+
+.Badge {
+  background-color: #d5aa7c;
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
