@@ -15,6 +15,7 @@
   margin-left: 20px;
   border-radius: 5px;
   background: lightgray;
+  height: 30px;
 
   /* child alignment */
   align-items: center;

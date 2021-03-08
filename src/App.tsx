@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <Header count={count} />
       <div className={"App-container"}>
         <Counter
           count={count}
