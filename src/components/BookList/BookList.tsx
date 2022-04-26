@@ -14,7 +14,7 @@ export const BookList: React.FC = () => {
     }, []);
 
     const fetchData = async () => {
-        const response = await fetch('http://localhost:4730/books')
+        const response = await fetch('http://localhost:8080/book')
         const result = await response.json();
         setBooks(result);
     }
