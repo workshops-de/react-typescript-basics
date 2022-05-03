@@ -1,12 +1,13 @@
 import React from 'react';
 
 interface BookListItemProps {
-    title: string
+    title: string,
+    isbn: string
 };
 
-export const BookListItem: React.FC<BookListItemProps> = ({ title }) => {
+export const BookListItem: React.FC<BookListItemProps> = ({ title, isbn }) => {
     return (
-        <li>{title}</li>
+        <li>{title}: {isbn}</li>
     )
 }
 

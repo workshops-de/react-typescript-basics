@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 import BookListItem from '../BookListItem/BookListItem';
 
 interface Book {
-    title: string
+    title: string,
+    isbn: string
 };
 
 export const BookList: React.FC = () => {
@@ -24,7 +25,7 @@ export const BookList: React.FC = () => {
             <h1>List of Books</h1>
             <ul>
                 {books.map((book) => {
-                    return <BookListItem title={book.title}></BookListItem>
+                    return <BookListItem title={book.title} isbn={book.isbn}></BookListItem>
                 })}
             </ul>
         </Fragment>
